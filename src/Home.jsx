@@ -9,9 +9,9 @@ export const Home = () => {
             <section className="py-4 container">
                 <div className="row justify-content-center">
                     {
-                        data.productsData.map((item, index) => {
+                        data.productsData.map((props, index) => {
                             return(
-                                <ItemCart props={item} key={index}></ItemCart>
+                                <ItemCart props={props} key={props.id}></ItemCart>
                             )
                         })
                     }
