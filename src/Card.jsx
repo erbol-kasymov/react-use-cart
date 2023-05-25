@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useCart } from 'react-use-cart'
 
 function Card() {
@@ -6,7 +7,13 @@ function Card() {
     console.log({items})
     if(isEmpty) return <h1>Карта азыр бош</h1>
   return (
-        <section className="py-4 container">
+        <section className="cart py-4 container">
+              <Link to={'/'}>
+            <button>Home</button>
+            </Link>
+            <Link to={'/card'}>
+            <button>Card</button>
+            </Link>
             <div className="row justify-content-center">
                 <div className="col-12">
                     <h5>Cart({totalUniqueItems}) total-items: ({totalItems})  total: ({cartTotal})</h5>
@@ -31,6 +38,7 @@ function Card() {
                 </li>
                 ))}
             </ul>
+          
         </section>
     )
 }
